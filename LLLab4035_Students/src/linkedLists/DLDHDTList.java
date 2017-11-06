@@ -9,8 +9,13 @@ public class DLDHDTList<E> implements LinkedList<E> {
 	
 	public DLDHDTList() {
 		//
+
+		header = new DNode<>(); 
+		trailer = new DNode<>(); 
 		header.setNext(trailer); 
-		trailer.setPrev(header);
+		trailer.setPrev(header); 
+		length = 0; 
+
 	}
 	
 	public void addFirstNode(Node<E> nuevo) {
@@ -96,6 +101,7 @@ public class DLDHDTList<E> implements LinkedList<E> {
 		prev.setNext(next);
 		next.setPrev(prev);
 		out.cleanLinks();
+		length--;
 	}
 	
 	/**
